@@ -20,7 +20,7 @@ function MenuService($http, ApiPath) {
   }
 
   service.getCategories = function () {
-    return $http.get(ApiPath + '/categories.json').then(function (response) {
+    return $http.get(ApiPath + '/menu_items.json').then(function (response) {
       return response.data;
     });
   };
@@ -38,7 +38,7 @@ function MenuService($http, ApiPath) {
   };
 
   service.getFavoriteDish = function(short_name) {
-    return $http.get(ApiPath + '/menu_items/' + short_name + '.json');
+    return $http.get(ApiPath + '/menu_items/' + short_name + '/menu_items/' + 0 + '.json');
   }
   
 }
